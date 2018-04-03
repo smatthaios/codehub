@@ -1,0 +1,7 @@
+dependencies {
+    testCompile("org.springframework.boot:spring-boot-test")
+    testCompile("org.springframework:spring-test")
+
+    compile("org.springframework.boot:spring-boot")
+    compile("org.springframework.boot:spring-boot-autoconfigure")
+}

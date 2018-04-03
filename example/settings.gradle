@@ -1,11 +1,35 @@
 rootProject.name = 'example'
 
+/*
+println(rootDir)
+
 def path = [] as LinkedList
 
 rootDir.traverse(
-        filter: { it.name =~ /build\.gradle|src/ && it.getParentFile().name != "buildSrc" },
+        filter: { it.name =~ /build\.gradle|src/ */
+/*&& it.getParentFile().name != "buildSrc"*//*
+ },
         maxDepth: 3,
-        preDir: { path << it.name },
-        postDir: { path.removeLast() }) { if (path) include path.join(":") }
-include 'flyway'
+        preDir: {
+            path << it.name
+        },
+        postDir: {
+            path.removeLast()
+        }
+    ) {
+        println(it)
+        if (path)
+            include path.join(":")
+    }
 
+println(path)
+*/
+include ':web'
+include ':web:web-app'
+include ':web:web-core'
+
+include ':core'
+include ':core:core-api'
+include ':core:core-impl'
+
+include ':flyway'
